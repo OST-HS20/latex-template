@@ -22,6 +22,7 @@
 \usepackage{framed}
 \usepackage{enumitem}
 \usepackage{wrapfig}
+\usepackage{makecell}
 
 % PDF export
 \title{\titleinfo}
@@ -35,12 +36,15 @@
 {todonotes}%
 {inline}{}
 
+% externe verweise
+\newcommand{\bronstein}[1]{\verweisextern{Bronstein}{#1}}
+
 % Makros
 \newcommand{\verweis}[2]{\small{(siehe auch Kapitel \ref{#1}, #2 (S. \pageref{#1}))}}
 \newcommand{\verweiseref}[1]{"\ref{#1} - \nameref{#1}"}
+\newcommand{\verweisextern}[2]{(\textcolor{red}{#1, S. \textbf{#2}})}
 \newcommand{\eqq}{\stackrel{?}{=}}
 \newcommand{\eqi}{\stackrel{!}{=}}
-\newcommand{\im}{\text{im}}
 	
 \newcommand*\circledr[1]	{
 	\tikz [baseline = (char.base)]	{
@@ -54,6 +58,21 @@
 	}
 }
 	
+	
+% Math
+\DeclareMathOperator{\im}{im}
+\DeclareMathOperator{\sech}{sech}
+\DeclareMathOperator{\csch}{csch}
+\DeclareMathOperator{\arcsec}{arcSec}
+\DeclareMathOperator{\arccot}{arcCot}
+\DeclareMathOperator{\arccsc}{arcCsc}
+\DeclareMathOperator{\arccosh}{arcCosh}
+\DeclareMathOperator{\arcsinh}{arcSinh}
+\DeclareMathOperator{\arctanh}{arcTanh}
+\DeclareMathOperator{\arcsech}{arcSech}
+\DeclareMathOperator{\arccsch}{arcCsch}
+\DeclareMathOperator{\arccoth}{arcCoth} 
+
 % Matrix
 \makeatletter
 \renewcommand*\env@matrix[1][*\c@MaxMatrixCols c]{%
