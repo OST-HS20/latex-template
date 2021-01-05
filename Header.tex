@@ -1,0 +1,68 @@
+% General Header
+\documentclass[10pt,a4paper,twocolumn]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel,varioref}
+\usepackage[left=0.7cm,right=0.7cm,top=1cm,bottom=1cm,includeheadfoot]{geometry}
+
+% Packages
+\usepackage[table]{xcolor}
+\usepackage{tikz}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{xcolor}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{float}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage[pdfborder={0 0 0}]{hyperref}
+\usepackage[colorinlistoftodos,prependcaption,textsize=tiny]{todonotes}
+\usepackage{framed}
+\usepackage{enumitem}
+\usepackage{wrapfig}
+
+% PDF export
+\title{\titleinfo}
+\author{\authorinfo}
+
+% Colors
+\definecolor{LightGray}{gray}{0.9}
+
+% to do notes
+\presetkeys%
+{todonotes}%
+{inline}{}
+
+% Makros
+\newcommand{\verweis}[2]{\small{(siehe auch Kapitel \ref{#1}, #2 (S. \pageref{#1}))}}
+\newcommand{\verweiseref}[1]{"\ref{#1} - \nameref{#1}"}
+\newcommand{\eqq}{\stackrel{?}{=}}
+\newcommand{\eqi}{\stackrel{!}{=}}
+\newcommand{\im}{\text{im}}
+	
+\newcommand*\circledr[1]	{
+	\tikz [baseline = (char.base)]	{
+		\node [shape = circle, draw = red, inner sep = 2pt, text = black] (char) {#1};
+	}
+}
+
+\newcommand*\circledb[1]	{
+	\tikz [baseline = (char.base)]	{
+		\node [shape = circle, draw = blue, inner sep = 2pt, text = black] (char) {#1};
+	}
+}
+	
+% Matrix
+\makeatletter
+\renewcommand*\env@matrix[1][*\c@MaxMatrixCols c]{%
+	\hskip -\arraycolsep
+	\let\@ifnextchar\new@ifnextchar
+	\array{#1}}
+	
+% Header / Footer
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\titleinfo{ }\tiny{(\versioninfo)}}
+\fancyhead[R]{Seite{ }\thepage{ }von{ }\pageref{LastPage}}
