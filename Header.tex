@@ -62,7 +62,26 @@
 		\node [shape = circle, draw = blue, inner sep = 2pt, text = black] (char) {#1};
 	}
 }
-	
+
+% https://tex.stackexchange.com/a/326380
+% Syntax: \colorboxed[<color model>]{<color specification>}{<math formula>}
+\newcommand*{\colorboxed}{}
+\def\colorboxed#1#{%
+	\colorboxedAux{#1}%
+}
+\newcommand*{\colorboxedAux}[3]{%
+	% #1: optional argument for color model
+	% #2: color specification
+	% #3: formula
+	\begingroup
+	\colorlet{cb@saved}{.}%
+	\color#1{#2}%
+	\boxed{%
+		\color{cb@saved}%
+		#3%
+	}%
+	\endgroup
+}
 	
 % Math
 \DeclareMathOperator{\im}{im}
