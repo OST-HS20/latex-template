@@ -140,6 +140,25 @@
 				$\hfil\displaystyle{#1}\hfil$\crcr}}}\limits}
 \makeatother
 
+% https://ctan.math.washington.edu/tex-archive/macros/latex/contrib/trfsigns/trfsigns.pdf
+\newcommand{\transform}{\mbox{\setlength{\unitlength}{0.1em}%
+	\begin{picture}(20,10)%
+		\put(2,3){\circle{4}}%
+		\put(4,3){\line(1,0){13}}%
+		\put(18,3){\circle*{4}}%
+	\end{picture}%
+	}%
+}%
+\newcommand{\itransform}{\mbox{\setlength{\unitlength}{0.1em}%
+	\begin{picture}(20,10)%
+		\put(2,3){\circle*{4}}%
+		\put(3,3){\line(1,0){13}}%
+		\put(18,3){\circle{4}}%
+	\end{picture}%
+	}%
+}%
+
+
 % Header / Footer
 \pagestyle{fancy}
 \fancyhf{}
