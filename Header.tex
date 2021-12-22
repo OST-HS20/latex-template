@@ -25,6 +25,7 @@
 \usepackage{hhline}
 \usepackage{makecell}
 \usepackage{pdflscape}
+\usepackage{booktabs}
 \usepackage{diagbox}
 \usepackage{listings}
 \usepackage{cancel}
@@ -64,6 +65,9 @@
 	}
 }
 
+% Table
+\newcolumntype{C}[1]{>{\centering\arraybackslash}m{#1}}
+
 % https://tex.stackexchange.com/a/326380
 % Syntax: \colorboxed[<color model>]{<color specification>}{<math formula>}
 \newcommand*{\colorboxed}{}
@@ -100,6 +104,10 @@
 \DeclareMathOperator{\Ln}{Ln} 
 \DeclareMathOperator{\cjs}{cjs} 
 \DeclareMathOperator{\sgn}{sgn} 
+\DeclareMathOperator{\var}{var} 
+\DeclareMathOperator{\sinc}{sinc} 
+\DeclareMathOperator{\lt}{<} 
+\DeclareMathOperator{\gt}{>} 
 
 % https://tex.stackexchange.com/questions/29834/closed-square-root-symbol
 % New definition of square root:
