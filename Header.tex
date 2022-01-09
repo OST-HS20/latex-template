@@ -25,6 +25,8 @@
 \usepackage{hhline}
 \usepackage{makecell}
 \usepackage{pdflscape}
+\usepackage{pdfpages}
+\usepackage{booktabs}
 \usepackage{diagbox}
 \usepackage{listings}
 \usepackage{cancel}
@@ -63,6 +65,10 @@
 		\node [shape = circle, draw = blue, inner sep = 2pt, text = black] (char) {#1};
 	}
 }
+
+% Table
+\newcolumntype{C}[1]{>{\centering\arraybackslash}m{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\arraybackslash}m{#1}}
 
 % https://tex.stackexchange.com/a/326380
 % Syntax: \colorboxed[<color model>]{<color specification>}{<math formula>}
@@ -103,6 +109,9 @@
 \DeclareMathOperator{\var}{var} 
 \DeclareMathOperator{\cov}{cov} 
 \DeclareMathOperator{\med}{med} 
+\DeclareMathOperator{\sinc}{sinc} 
+\DeclareMathOperator{\lt}{<} 
+\DeclareMathOperator{\gt}{>} 
 
 % https://tex.stackexchange.com/questions/29834/closed-square-root-symbol
 % New definition of square root:
@@ -134,6 +143,25 @@
 				\tiny\downbracefill\crcr\noalign{\kern3\p@\nointerlineskip}%
 				$\hfil\displaystyle{#1}\hfil$\crcr}}}\limits}
 \makeatother
+
+% https://ctan.math.washington.edu/tex-archive/macros/latex/contrib/trfsigns/trfsigns.pdf
+\newcommand{\transform}{\mbox{\setlength{\unitlength}{0.1em}%
+	\begin{picture}(30,10)%
+		\put(7,3){\circle{4}}%
+		\put(9,3){\line(1,0){13}}%
+		\put(23,3){\circle*{4}}%
+	\end{picture}%
+	}%
+}%
+\newcommand{\itransform}{\mbox{\setlength{\unitlength}{0.1em}%
+	\begin{picture}(30,10)%
+		\put(7,3){\circle*{4}}%
+		\put(9,3){\line(1,0){13}}%
+		\put(23,3){\circle{4}}%
+	\end{picture}%
+	}%
+}%
+
 
 % Header / Footer
 \pagestyle{fancy}
